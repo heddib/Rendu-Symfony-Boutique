@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'meta.product'|trans }} &raquo;
+	{{ produit.nom }}
+{% endblock %}
+
+{% block body %}
+	<div class="row">
+		<div class="col-md-4">
+			<h1>{{ produit.nom }}</h1>
+			<p>{{ produit.qte }}
+				{{ 'product.in_stock'|trans }}</p>
+			<p>{{ produit.prix }}€</p>
+			<a href="{{ path('delete_product', {'id':produit.id}) }}" class="btn btn-danger">
+				{{ 'product.delete_product'|trans }}
+			</a>
+		</div>
+		<div class="col-md-8">
+			{% if produit.photo is not null %}
+				<img class="img-thumbnail img-responsive" width="200" height="200" src="{{ asset('images/' ~ produit.photo) }}">
+			{% else %}
+				<p>
+					<b>{{ 'product.no_photo'|trans }}</b>
+				</p>
+			{% endif %}
+		</div>
+	</div>
+
+	<h2>{{ 'product.add_to_cart'|trans({'%product%': produit.nom}) }}</h2>
+	{{ form(form_add_panier) }}{% endblock %}

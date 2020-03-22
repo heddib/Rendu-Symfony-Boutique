@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'meta.title'|trans }} &raquo; {{ 'meta.cart'|trans }}
+{% endblock %}
+
+{% block body %}
+	<style>
+		.wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.wrapper .panier {
+			background: #F5F5F5;
+			padding: 2px 6px;
+			border: solid black;
+		}
+	</style>
+
+	<div class="wrapper">
+		<h1>{{ 'cart.title'|trans }}</h1>
+		<div class="row">
+			{% if panier is not empty %}
+				{# Somme d'un produit * quantité #}
+				{% set prix_total_quantite = 0 %}
+				{# Prix de tous les articles commandés #}
+				{% set prix_total = 0 %}
+				{% set state = 0 %}
+			<div class="col-md-8">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>{{ 'cart.table.photo'|trans }}</th>
+							<th>{{ 'cart.table.name'|trans }}</th>
+							<th>{{ 'cart.table.quantity'|trans }}</th>
+							<th>{{ 'cart.table.price'|trans }}</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for produit in panier %}
+							{% set state = produit.etat %}
+							<tr>
+								<td>
+									{% if produit.produits.photo is not null %}
+										<img class="img-thumbnail img-responsive" width="200" height="200" src="{{ asset('images/' ~ produit.produits.photo) }}">
+									{% endif %}
+								</td>
+								<td>
+									<a href="{{ path('view_product', {'id':produit.produits.id}) }}">
+										{{ produit.produits.nom }}
+									</a>
+								</td>
+								<td>{{ produit.qte }}</td>
+								<td>{% set prix_total_quantite = produit.qte * produit.produits.prix %}
+                                {{ prix_total_quantite }}€</td>
+								{% set prix_total = prix_total + prix_total_quantite %}
+								<td>
+									<a class="btn btn-danger" href="{{ path('delete_from_panier', {'id':produit.id}) }}">
+										<i class="fa fa-close"></i>
+									</a>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-4 panier">
+					<h3>{{ 'cart.information'|trans }}</h3>
+				</hr>
+				<p>{{ 'cart.total_products'|trans }} :
+					{{ panier|length }}
+				</p>
+				<p>{{ 'cart.total_amount'|trans }} :
+					{{prix_total}}€
+				</p>
+				{% if state == 0 %}
+					<a class="btn btn-success" href="{{ path('validate_panier') }}">{{ 'cart.validate_cart'|trans }}</a>
+				{% else %}
+					<button class="btn btn-warning" disabled>{{ 'cart.validated_cart'|trans }}</button>
+				{% endif %}
+			</div>
+		{% else %}
+			<p>{{ 'cart.no_products_in_cart'|trans }}</p>
+		{% endif %}
+	</div>
+</div>{% endblock %}

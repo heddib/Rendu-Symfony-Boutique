@@ -1,0 +1,60 @@
+meta:
+  title: "Accueil"
+  products: "Produits"
+  product: "Produit"
+  cart: "Panier"
+
+nav:
+  brand: "Boutique"
+  products: "Produits"
+  cart: "Panier"
+
+products:
+  title: "Liste des produits"
+  table:
+    photo: "Photo"
+    name: "Nom"
+    quantity: "Quantité"
+    price: "Prix"
+  no_products: "Il n'y a pas de produits. :("
+  add_product: "Ajouter un produit"
+
+product:
+  in_stock: "produits en stock"
+  delete_product: "Supprimer le produit"
+  no_photo: "Pas de photo pour ce produit."
+  add_to_cart: "Ajouter %product% au panier"
+
+cart:
+  title: "Panier"
+  table:
+    photo: "Photo"
+    name: "Nom"
+    quantity: "Quantité"
+    price: "Prix"
+  information: "Informations"
+  total_products: "Total des produits"
+  total_amount: "Montant total"
+  validate_cart: "Valider le panier"
+  validated_cart: "Panier validé"
+  no_products_in_cart: "Il n'y a pas de produits dans votre panier. :("
+
+flash:
+  error:
+    upload_photo: "Impossible d'uploader le fichier"
+    product_not_found: "Produit introuvable"
+    validated_cart_no_products: "Vous n'avez pas de produits dans votre panier."
+    quantity: "Problème de quantité."
+  success:
+    product_deleted_from_cart: "Produit supprimé du panier"
+    validated_cart: "Panier validé"
+    added_product: "Produit ajouté"
+    added_product_to_cart: "Produit ajouté au panier"
+    deleted_product: "Produit supprimé"
+
+Nom: "Nom"
+Qte: "Quantité"
+Prix: "Prix"
+Photo: "Photo"
+Submit: "Ajouter au panier"
+Sauvegarder: "Ajouter à la liste des produits"

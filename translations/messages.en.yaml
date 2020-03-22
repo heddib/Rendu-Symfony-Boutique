@@ -1,0 +1,60 @@
+meta:
+  title: "Home"
+  products: "Products"
+  product: "Product"
+  cart: "Cart"
+
+nav:
+  brand: "Shop"
+  products: "Products"
+  cart: "Cart"
+
+products:
+  title: "Products Listing"
+  table:
+    photo: "Photo"
+    name: "Name"
+    quantity: "Quantity"
+    price: "Price"
+  no_products: "There are no products. :("
+  add_product: "Add product"
+
+product:
+  in_stock: "products in stock"
+  delete_product: "Delete product"
+  no_photo: "No photo for this product."
+  add_to_cart: "Add %product% to cart"
+
+cart:
+  title: "Cart"
+  table:
+    photo: "Photo"
+    name: "Name"
+    quantity: "Quantity"
+    price: "Price"
+  information: "Information"
+  total_products: "Total products"
+  total_amount: "Total amount"
+  validate_cart: "Validate cart"
+  validated_cart: "Cart validated"
+  no_products_in_cart: "There are no products in your cart. :("
+
+flash:
+  error:
+    upload_photo: "Unable to upload file"
+    product_not_found: "Product not found"
+    validated_cart_no_products: "You have no products in your cart."
+    quantity: "Quantity problem."
+  success:
+    product_deleted_from_cart: "Deleted product from cart"
+    validated_cart: "Cart validated"
+    added_product: "Added product"
+    added_product_to_cart: "Added product to cart"
+    deleted_product: "Deleted product"
+
+Nom: "Name"
+Qte: "Quantity"
+Prix: "Price"
+Photo: "Photo"
+Submit: "Add to cart"
+Sauvegarder: "Add to products listing"
