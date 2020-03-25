@@ -8,3 +8,6 @@ homepage:
     defaults:
         path: /{_locale}
         permanent: true
+        requirements:
+        _locale: fr|en
+        defaults: { _locale: fr}
