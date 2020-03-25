@@ -6,5 +6,5 @@ homepage:
     path: /
     controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
     defaults:
-        path: /%locale%
+        path: /{_locale}
         permanent: true
