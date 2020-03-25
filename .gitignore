@@ -15,4 +15,4 @@
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 
-/public/images
+/public/images/
