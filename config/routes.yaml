@@ -9,5 +9,5 @@ homepage:
         path: /{_locale}
         permanent: true
         requirements:
-        _locale: fr|en
-        defaults: { _locale: fr}
+            _locale: fr|en
+            defaults: { _locale: fr}
