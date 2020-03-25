@@ -6,8 +6,5 @@ homepage:
     path: /
     controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
     defaults:
-        path: /{_locale}
+        path: /%locale%/
         permanent: true
-        requirements:
-            _locale: fr|en
-            defaults: { _locale: fr}
